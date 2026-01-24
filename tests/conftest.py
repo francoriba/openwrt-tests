@@ -81,7 +81,9 @@ def _host_ipv4_from_hostname_I() -> str:
     # take the first token; if it's not IPv4, fall back to first IPv4 token
     first = out.split()[0]
     if ":" in first:
-        first = next((t for t in out.split() if re.match(r"^\d{1,3}(\.\d{1,3}){3}$", t)), "")
+        first = next(
+            (t for t in out.split() if re.match(r"^\d{1,3}(\.\d{1,3}){3}$", t)), ""
+        )
     if not re.match(r"^\d{1,3}(\.\d{1,3}){3}$", first or ""):
         raise RuntimeError(f"Could not determine IPv4 from: {out!r}")
     return first

@@ -85,12 +85,12 @@ def test_bat_links_info(upload_vwifi):
     assert N1 in data, f"Expected {N1} in shared-state keys: {list(data.keys())}"
     assert N2 in data, f"Expected {N2} in shared-state keys: {list(data.keys())}"
     assert N3 in data, f"Expected {N3} in shared-state keys: {list(data.keys())}"
-    assert (
-        link_key_N1234_N1 in data[N1234]["links"]
-    ), f"Expected {link_key_N1234_N1} in shared-state keys: {list(data[N1234]['links'])}"
-    assert (
-        link_key_N1234_N2 in data[N1234]["links"]
-    ), f"Expected {link_key_N1234_N2} in shared-state keys: {list(data[N1234]['links'])}"
-    assert (
-        link_key_N1234_N3 in data[N1234]["links"]
-    ), f"Expected {link_key_N1234_N3} in shared-state keys: {list(data[N1234]['links'])}"
+    assert link_key_N1234_N1 in data[N1234]["links"], (
+        f"Expected {link_key_N1234_N1} in shared-state keys: {list(data[N1234]['links'])}"
+    )
+    assert link_key_N1234_N2 in data[N1234]["links"], (
+        f"Expected {link_key_N1234_N2} in shared-state keys: {list(data[N1234]['links'])}"
+    )
+    assert link_key_N1234_N3 in data[N1234]["links"], (
+        f"Expected {link_key_N1234_N3} in shared-state keys: {list(data[N1234]['links'])}"
+    )
